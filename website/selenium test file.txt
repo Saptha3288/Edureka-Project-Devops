@@ -1,0 +1,20 @@
+package com.edureka.selenium;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class SeleniumVerify {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+		ChromeDriver chromedriver=new ChromeDriver();
+		chromedriver.manage().window().maximize();
+		chromedriver.get("http://18.191.10.210:9999");
+		chromedriver.findElement(By.linkText("About Us")).click();
+		String bodyText = chromedriver.findElement(By.tagName("body")).getText();
+		System.out.println(bodyText);
+
+	}
+
+}
